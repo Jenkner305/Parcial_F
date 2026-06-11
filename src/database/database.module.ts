@@ -19,6 +19,10 @@ import { DatabaseInitService } from './database-init.service';
         synchronize: configService.get<string>('DB_SYNCHRONIZE') === 'true',
         logging: configService.get<string>('DB_LOGGING') === 'true',
         autoLoadEntities: true,
+
+        ssl: {
+    rejectUnauthorized: false,
+  },
         // TODO (estudiante): Agrega la configuración SSL si tu proveedor de base de datos lo requiere.
       }),
     }),
